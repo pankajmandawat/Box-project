@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let arr of arr_1" class="col-md-2">
+            <div class="card">
+                <div class="card-header ">
+                    <h3 class="text-center">Box {{arr_1.indexOf(arr)+1}}</h3>
+                </div>
+                <div [ngStyle] ="{'background-color': arr.color}" class="card-body text-center">
+                    {{arr.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+
+<div class="container">
+    <div class="col-md-6 offset-3">
+        <form class="form-inline" [formGroup]="boxForm" (ngSubmit)="Submit()">
+            <div class="form-group">
+                <input class="form-control" type="text" formControlName="boxName">
+                <br />
+                <div class="text-center">
+                    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
